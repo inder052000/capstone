@@ -55,9 +55,9 @@ previous_frame_detections = []
 
 
 #Remove
-WeeklyDateStr = pd._to
-DailyDateStr = datetime.date.today()
-MonthlyDateStr = datetime.date.today()
+WeeklyDateStr = pd.to_datetime('2021-09-07')
+DailyDateStr = pd.to_datetime('2021-12-26')
+MonthlyDateStr = pd.to_datetime('2022-01-04')
 
 TSObj = TimeSeriesPrediction()
 
