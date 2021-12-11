@@ -36,5 +36,5 @@ load1 = SARIMAXResults.load('daily_Two-Wheeler_model.pkl')
 predictionss = load1.get_prediction(start=pd.to_datetime('2021-09-09'),dynamic=False)
 val = predictionss.predicted_mean
 row = 63
-#act = int(max(0,(val[row])))
-print(val)
+act = int(max(0,round(val[0])))
+print(act)

@@ -79,9 +79,9 @@ def uploadDataDaily():
     finalList = [[str(DailyDateStr), valuesDaily['two_wheeler'], valuesDaily['four_wheeler'], valuesDaily['pedestrian']]]
     valuesDaily = {"two_wheeler": 0, "four_wheeler": 0, "pedestrian": 0 }
     request = sheet.values().append(spreadsheetId=SAMPLE_SPREADSHEET_ID, range="Daily!A1:D1", valueInputOption="USER_ENTERED", insertDataOption = "INSERT_ROWS", body={"values":finalList}).execute()
-    TSObj.calculateAndUploadData('Two-wheeler', 'Daily')
-    TSObj.calculateAndUploadData('Four-wheeler', 'Daily')
-    TSObj.calculateAndUploadData('Pedestrian', 'Daily')
+    TSObj.calculateAndUploadData('Two-wheeler', 'daily',DailyDateStr)
+    TSObj.calculateAndUploadData('Four-wheeler', 'daily',DailyDateStr)
+    TSObj.calculateAndUploadData('Pedestrian', 'daily',DailyDateStr)
 
 def uploadDataWeekly():
     global valuesWeekly
@@ -90,9 +90,9 @@ def uploadDataWeekly():
     finalList = [[str(WeeklyDateStr), valuesWeekly['two_wheeler'], valuesWeekly['four_wheeler'], valuesWeekly['pedestrian']]]
     valuesWeekly = {"two_wheeler": 0, "four_wheeler": 0, "pedestrian": 0 }
     request = sheet.values().append(spreadsheetId=SAMPLE_SPREADSHEET_ID, range="Weekly!A1:D1", valueInputOption="USER_ENTERED", insertDataOption = "INSERT_ROWS", body={"values":finalList}).execute()
-    TSObj.calculateAndUploadData('Two-wheeler', 'Weekly')
-    TSObj.calculateAndUploadData('Four-wheeler', 'Weekly')
-    TSObj.calculateAndUploadData('Pedestrian', 'Weekly')
+    TSObj.calculateAndUploadData('Two-wheeler', 'weekly',WeeklyDateStr)
+    TSObj.calculateAndUploadData('Four-wheeler', 'weekly',WeeklyDateStr)
+    TSObj.calculateAndUploadData('Pedestrian', 'weekly',WeeklyDateStr)
 
 
 def uploadDataMonthly():
@@ -102,9 +102,9 @@ def uploadDataMonthly():
     finalList = [[str(MonthlyDateStr), valuesMonthly['two_wheeler'], valuesMonthly['four_wheeler'], valuesMonthly['pedestrian']]]
     valuesMonthly = {"two_wheeler": 0, "four_wheeler": 0, "pedestrian": 0 }
     request = sheet.values().append(spreadsheetId=SAMPLE_SPREADSHEET_ID, range="Monthly!A1:D1", valueInputOption="USER_ENTERED", insertDataOption = "INSERT_ROWS", body={"values":finalList}).execute()
-    TSObj.calculateAndUploadData('Two-wheeler', 'Monthly')
-    TSObj.calculateAndUploadData('Four-wheeler', 'Monthly')
-    TSObj.calculateAndUploadData('Pedestrian', 'Monthly')
+    TSObj.calculateAndUploadData('Two-wheeler', 'monthly',MonthlyDateStr)
+    TSObj.calculateAndUploadData('Four-wheeler', 'monthly',MonthlyDateStr)
+    TSObj.calculateAndUploadData('Pedestrian', 'monthly',MonthlyDateStr)
 
 #Scheduler
 # schedule.every().day.at("23:59").do(uploadDataDaily)  #Daily
